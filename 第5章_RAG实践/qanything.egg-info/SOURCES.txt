@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+qanything.egg-info/PKG-INFO
+qanything.egg-info/SOURCES.txt
+qanything.egg-info/dependency_links.txt
+qanything.egg-info/requires.txt
+qanything.egg-info/top_level.txt
+qanything_kernel/__init__.py
