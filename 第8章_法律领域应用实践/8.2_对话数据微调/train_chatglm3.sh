@@ -1,0 +1,20 @@
+CUDA_VISIBLE_DEVICES=0 deepspeed --master_port 7860 train.py \
+                --train_path data/processed/chat_data.json \
+                --model_name_or_path  /data/external/资源/预训练模型/chatglm3-6b/ \
+                --per_device_train_batch_size 1 \
+                --max_len 256 \
+                --max_src_len 64 \
+                --learning_rate 1e-4 \
+                --weight_decay 0.1 \
+                --num_train_epochs 2 \
+                --gradient_accumulation_steps 16 \
+                --warmup_ratio 0.1 \
+                --mode glm3 \
+                --lora_dim 16 \
+                --lora_alpha 64 \
+                --lora_dropout 0.1 \
+                --seed 1234 \
+                --ds_file ds_zero2_no_offload.json \
+                --gradient_checkpointing \
+                --show_loss_step 10 \
+                --output_dir ./output-glm3
